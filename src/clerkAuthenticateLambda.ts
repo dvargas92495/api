@@ -48,11 +48,13 @@ const authenticate =
           headers,
         });
       })
-      .catch((e) => ({
-        statusCode: 500,
-        body: e.message,
-        headers,
-      }));
+      .catch((e) => {
+        return {
+          statusCode: 500,
+          body: e.message,
+          headers,
+        };
+      });
   };
 
 export default authenticate;
