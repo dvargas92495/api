@@ -3,12 +3,8 @@
     "jsx": "react",
     "target": "es2015",
     "allowJs": false,
-    "lib": [
-      "es2019",
-      "dom",
-      "dom.iterable"
-    ],
-    "module": "commonjs",
+    "lib": ["es2019", "dom", "dom.iterable"],
+    "module": "es6",
     "moduleResolution": "node",
     "declaration": true,
     "outDir": "./dist",
@@ -20,13 +16,9 @@
     "noImplicitThis": true,
     "noImplicitAny": true,
     "forceConsistentCasingInFileNames": true,
-    "allowSyntheticDefaultImports": true
+    "allowSyntheticDefaultImports": true,
+    "skipLibCheck": true
   },
-  "include": [
-    "src"
-  ],
-  "exclude": [
-    "node_modules",
-    "**/__tests__/*"
-  ]
+  "include": ["src"],
+  "exclude": ["node_modules", "**/__tests__/*"]
 }
