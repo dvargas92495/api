@@ -14,7 +14,7 @@ export const connect = (entities: EntitySchema[]): Promise<void | Connection> =>
         // Need to get defaults bc create connection can't find entities/migrations in ts files
         // ideally, this whole edge of the ternary is simply `createConnection()`
         // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-        // @ts-ignore 
+        // @ts-ignore
         createConnection({
           ...opts,
           entities,
