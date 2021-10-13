@@ -35,6 +35,8 @@
     "typescript": "^4.4.4"
   },
   "dependencies": {
-    "@clerk/clerk-sdk-node": "^0.6.1"
+    "@clerk/clerk-sdk-node": "^0.6.1",
+    "mysql": "^2.18.1",
+    "typeorm": "^0.2.38"
   }
 }
