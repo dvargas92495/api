@@ -1,5 +1,1 @@
-const run = (): number => {
-  return 0;
-};
-
-export default run;
+export { default as clerkAuthenticateLambda } from "./clerkAuthenticateLambda";

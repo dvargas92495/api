@@ -1,5 +1,5 @@
-import run from "../src";
+import { clerkAuthenticateLambda } from "../src";
 
-test("Runs Default", () => {
-  expect(run()).toBe(0);
+test("clerkAuthenticateLambda", () => {
+  expect(clerkAuthenticateLambda).toBeDefined();
 });
