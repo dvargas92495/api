@@ -25,6 +25,12 @@ const authenticate =
       .then((session) => (session.sub ? users.getUser(session.sub) : undefined))
       .then((user) => {
         if (user) {
+          if (!user.id)
+            return Promise.resolve({
+              statusCode: 401,
+              body: "Invalid User",
+              headers,
+            });
           const response = fcn(
             {
               ...event,
