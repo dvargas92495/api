@@ -12,7 +12,7 @@ export const connect = (entities: EntitySchema[]): Promise<void | Connection> =>
         entities,
         type: "mysql",
         migrations: undefined,
-        logging: process.env.TYPEORM_LOGGING === 'true',
+        logging: process.env.TYPEORM_LOGGING === "true",
         synchronize: false,
         port: 5432,
         database: process.env.TYPEORM_DATABASE,
