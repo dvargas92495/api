@@ -2,7 +2,7 @@ import clerk, { users } from "@clerk/clerk-sdk-node";
 import { APIGatewayProxyHandler } from "aws-lambda";
 
 const headers = {
-  "Access-Control-Allow-Origin": process.env.CORS_ORIGIN || "*",
+  "Access-Control-Allow-Origin": process.env.HOST || "*",
 };
 
 const authenticate =
