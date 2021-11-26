@@ -1,7 +1,7 @@
 {
   "name": "@dvargas92495/api",
   "description": "Description for @dvargas92495/api",
-  "version": "0.2.4",
+  "version": "0.2.5",
   "license": "MIT",
   "repository": "dvargas92495/api",
   "main": "dist/index.js",
