@@ -6,9 +6,9 @@ import {
 } from "typeorm";
 
 export const connect = (entities: EntitySchema[]): Promise<void | Connection> =>
-  getConnectionManager().has("default")
-    ? Promise.resolve()
-    : createConnection({
+  Promise.all(getConnectionManager().connections.map((c) => c.close())).then(
+    () =>
+      createConnection({
         entities,
         type: "mysql",
         migrations: undefined,
@@ -19,6 +19,7 @@ export const connect = (entities: EntitySchema[]): Promise<void | Connection> =>
         password: process.env.TYPEORM_PASSWORD,
         username: process.env.TYPEORM_USERNAME,
         host: process.env.TYPEORM_HOST,
-      });
+      })
+  );
 
 export default connect;
