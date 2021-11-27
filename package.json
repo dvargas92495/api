@@ -38,6 +38,7 @@
   "dependencies": {
     "@clerk/clerk-sdk-node": "^0.6.1",
     "aws-sdk-plus": "^0.4.1",
+    "axios": "^0.24.0",
     "fuegojs": "^0.14.15",
     "mysql2": "^2.3.2",
     "randomstring": "^1.2.1",
