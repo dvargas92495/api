@@ -24,6 +24,7 @@
   "devDependencies": {
     "@types/aws-lambda": "^8.10.84",
     "@types/jest": "^27.0.2",
+    "@types/randomstring": "^1.1.8",
     "@typescript-eslint/eslint-plugin": "^5.0.0",
     "@typescript-eslint/parser": "^5.0.0",
     "cross-env": "^7.0.3",
@@ -39,6 +40,7 @@
     "aws-sdk-plus": "^0.4.1",
     "fuegojs": "^0.14.15",
     "mysql2": "^2.3.2",
+    "randomstring": "^1.2.1",
     "typeorm": "^0.2.41"
   }
 }

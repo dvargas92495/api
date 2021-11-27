@@ -4,11 +4,13 @@ import {
   Connection,
   EntitySchema,
 } from "typeorm";
+import randomstring from "randomstring";
 
-export const connect = (entities: EntitySchema[]): Promise<void | Connection> =>
+export const connect = (entities: EntitySchema[]): Promise<Connection> =>
   Promise.all(getConnectionManager().connections.map((c) => c.close())).then(
     () =>
       createConnection({
+        name: randomstring.generate({ charset: "alphabetic", length: 16 }),
         entities,
         type: "mysql",
         migrations: undefined,
