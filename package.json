@@ -4,14 +4,17 @@
   "version": "0.3.1",
   "license": "MIT",
   "repository": "dvargas92495/api",
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
+  "main": "index.js",
+  "types": "index.d.ts",
   "scripts": {
+    "preprebuild": "echo woah",
     "prebuild": "cross-env NODE_ENV=test npm t",
     "build": "tsc",
     "format": "prettier --write \"src/**/*.ts\"",
     "lint": "eslint . --ext .ts",
-    "prepublishOnly": "npm run build",
+    "preppo": "npm run build",
+    "ppo": "mv dist/* ./",
+    "prepublishOnly": "npm run ppo",
     "preversion": "npm run lint",
     "version": "npm run format && git add -A src",
     "postversion": "git push origin main && git push --tags",
@@ -19,7 +22,7 @@
     "test": "jest --config jestconfig.json"
   },
   "files": [
-    "/dist"
+    "*.js"
   ],
   "devDependencies": {
     "@types/aws-lambda": "^8.10.84",
@@ -42,6 +45,7 @@
     "fuegojs": "^0.14.15",
     "mysql2": "^2.3.2",
     "randomstring": "^1.2.1",
+    "stripe": "^8.191.0",
     "typeorm": "^0.2.41"
   }
 }
