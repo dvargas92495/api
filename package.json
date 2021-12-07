@@ -22,7 +22,8 @@
     "test": "jest --config jestconfig.json"
   },
   "files": [
-    "*.js"
+    "*.js",
+    "*.d.ts"
   ],
   "devDependencies": {
     "@types/aws-lambda": "^8.10.84",
