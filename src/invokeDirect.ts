@@ -28,6 +28,8 @@ const invokeAsync =
       }: {
         path: string;
         data: T;
-      }) => require(nodePath.resolve('functions', path)).handler(data);
+      }) => 
+        // eslint-disable-next-line @typescript-eslint/no-var-requires
+        require(nodePath.resolve('functions', path)).handler(data);
 
 export default invokeAsync;
