@@ -5,7 +5,7 @@ const lambda = new AWS.Lambda();
 
 const invokeAsync =
   process.env.NODE_ENV === "production"
-    ? <T extends Record<string, string>>({
+    ? <T extends Record<string, unknown>>({
         path,
         data,
       }: {
@@ -22,7 +22,7 @@ const invokeAsync =
           })
           .promise()
           .then(() => true)
-    : <T extends Record<string, string>>({
+    : <T extends Record<string, unknown>>({
         path,
         data,
       }: {
