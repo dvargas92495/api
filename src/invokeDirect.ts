@@ -30,6 +30,6 @@ const invokeDirect =
         data: T;
       }) =>
         // eslint-disable-next-line @typescript-eslint/no-var-requires
-        require(nodePath.resolve("functions", path)).handler(data);
+        require(nodePath.resolve("build", `${path}.js`)).handler(data);
 
 export default invokeDirect;
