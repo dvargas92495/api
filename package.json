@@ -41,6 +41,7 @@
   },
   "dependencies": {
     "@clerk/clerk-sdk-node": "^2.5.0",
+    "@dvargas92495/remix-lambda-at-edge": "^0.2.0",
     "aws-sdk-plus": "^0.4.1",
     "axios": "^0.24.0",
     "fuegojs": "^0.14.15",
