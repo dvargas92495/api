@@ -1,7 +1,7 @@
-import AWS from "aws-sdk";
+import { Lambda } from "@aws-sdk/client-lambda";
 import nodePath from "path";
 
-const lambda = new AWS.Lambda();
+const lambda = new Lambda({});
 
 const invokeDirect =
   process.env.NODE_ENV === "production"
@@ -18,9 +18,8 @@ const invokeDirect =
               ?.replace(/\./g, "-")
               .replace(/^https?:\/\//, "")}_${path}`,
             InvocationType: "RequestResponse",
-            Payload: JSON.stringify(data),
+            Payload: Buffer.from(JSON.stringify(data)),
           })
-          .promise()
           .then(() => true)
     : <T extends Record<string, unknown>>({
         path,
