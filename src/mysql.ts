@@ -28,7 +28,7 @@ const getMysqlConnection = (mysql?: mysql.Connection) => {
         | mysql.ResultSetHeader
     >(
       s: string,
-      args: (string | number)[] = []
+      args: (string | number | Date)[] = []
     ): Promise<T> =>
       new Promise((resolve, reject) => {
         return connection.execute<T>(s, args, (err, res) => {
