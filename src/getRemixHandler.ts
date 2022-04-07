@@ -1,11 +1,12 @@
 import { createRequestHandler } from "remix-lambda-at-edge";
+import { appPath } from "fuegojs/dist/common";
 // import sendEmail from "aws-sdk-plus/dist/sendEmail";
 
 const getRemixHandler = ({
   originPaths = [],
 }: { originPaths?: RegExp[] } = {}) =>
   createRequestHandler({
-    getBuild: () => require("./build"),
+    getBuild: () => require(appPath("build")),
     originPaths: [
       "favicon.ico",
       /^\/build\/.*/,
