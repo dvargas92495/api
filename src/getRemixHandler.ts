@@ -1,12 +1,13 @@
 import { createRequestHandler } from "remix-lambda-at-edge";
-import { appPath } from "fuegojs/dist/common";
 // import sendEmail from "aws-sdk-plus/dist/sendEmail";
 
 const getRemixHandler = ({
   originPaths = [],
 }: { originPaths?: RegExp[] } = {}) =>
   createRequestHandler({
-    getBuild: () => require(appPath("build")),
+    // this looks really bad but is actually okay. Current project standards guarantee this file and build file's location
+    // and we need a hardcoded file path for esbuild to be able to do it's bundling
+    getBuild: () => require("../../../server/build"),
     originPaths: [
       "favicon.ico",
       /^\/build\/.*/,
