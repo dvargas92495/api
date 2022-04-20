@@ -1,8 +1,6 @@
 import { Lambda } from "@aws-sdk/client-lambda";
 import nodePath from "path";
 
-const lambda = new Lambda({});
-
 const invokeDirect =
   process.env.NODE_ENV === "production"
     ? <T extends Record<string, unknown>>({
@@ -12,7 +10,7 @@ const invokeDirect =
         path: string;
         data: T;
       }) =>
-        lambda
+        new Lambda({ region: process.env.AWS_REGION })
           .invoke({
             FunctionName: `${(process.env.ORIGIN || "")
               ?.replace(/\./g, "-")

@@ -1,8 +1,6 @@
 import AWS from "aws-sdk";
 import axios from "axios";
 
-const lambda = new AWS.Lambda();
-
 const invokeAsync =
   process.env.NODE_ENV === "production"
     ? <T extends Record<string, unknown>>({
@@ -12,7 +10,7 @@ const invokeAsync =
         path: string;
         data: T;
       }) =>
-        lambda
+        new AWS.Lambda({ region: process.env.AWS_REGION })
           .invoke({
             FunctionName: `${(process.env.ORIGIN || "")
               ?.replace(/\./g, "-")
